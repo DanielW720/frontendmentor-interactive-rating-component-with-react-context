@@ -6,7 +6,7 @@ import Button from '../utilities/Button';
 const Rating = (props) => {
     return (
         <Card className={`${classes.rating}`}>
-            <img src={iconstar} arg="" className={classes["icon-star"]} />
+            <img src={iconstar} alt="A star" className={classes["icon-star"]} />
             <h1>How did we do?</h1>
             <p>
                 Please let us know how we did with your support request.

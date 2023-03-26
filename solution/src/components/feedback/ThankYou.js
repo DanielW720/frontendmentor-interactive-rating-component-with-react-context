@@ -7,7 +7,7 @@ const ThankYou = props => {
     return (
         <div onClick={props.onReset}>
             <Card className={`${classes.thankyou}`} >
-                <img src={illustrationThankYou} />
+                <img src={illustrationThankYou} alt="Thank you" />
                 <div className={classes.youselected}>You selected {props.rating} out of 5</div>
                 <h1>Thank you!</h1>
                 <p>
