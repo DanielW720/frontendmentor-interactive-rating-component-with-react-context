@@ -1,0 +1,8 @@
+.card {
+    width: 375px;
+    color: var(--mediumgrey);
+    height: fit-content;
+    border-radius: 20px;
+    background-image: linear-gradient(#1f2630, #171e28);
+    padding: 30px 25px 15px 25px;
+}

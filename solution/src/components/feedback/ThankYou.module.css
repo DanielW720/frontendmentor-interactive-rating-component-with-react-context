@@ -1,0 +1,7 @@
+.thankyou {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thankyou img {}

@@ -1,0 +1,13 @@
+.button {
+    border-radius: 50%;
+    background-color: var(--darkblue);
+    margin: 10px 0;
+    border: none;
+    width: 48px;
+    height: 48px;
+    color: var(--lightgrey);
+    /* Centers the digit */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
