@@ -6,10 +6,10 @@ function App() {
   return (
     <div className="App">
       <main>
-        <Rating />
+        {/* <Rating /> */}
         {/* temporary div */}
-        {/* <div style={{ "marginTop": "30px" }}></div>
-        <ThankYou /> */}
+        <div style={{ "marginTop": "30px" }}></div>
+        <ThankYou rating={4} />
       </main>
     </div>
   );

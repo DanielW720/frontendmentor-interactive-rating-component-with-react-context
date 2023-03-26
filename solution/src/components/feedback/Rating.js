@@ -13,11 +13,13 @@ const Rating = () => {
                 All feedback is appreciated to help us improve our offering!
             </p>
             <div className={classes["rating-button-group"]}>
-                <Button className={classes["rating-button"]}>1</Button>
-                <Button className={classes["rating-button"]}>2</Button>
-                <Button className={classes["rating-button"]}>3</Button>
-                <Button className={classes["rating-button"]}>4</Button>
-                <Button className={classes["rating-button"]}>5</Button>
+                {
+                    [1, 2, 3, 4, 5].map(rating =>
+                        <Button className={classes["rating-button"]}>
+                            {rating}
+                        </Button>
+                    )
+                }
             </div>
             <Button className={classes["submit-button"]}>Submit</Button>
         </Card>

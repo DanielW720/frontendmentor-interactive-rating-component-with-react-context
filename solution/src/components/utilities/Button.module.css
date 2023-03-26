@@ -11,3 +11,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.button:hover {
+    background-color: var(--orange);
+    cursor: pointer;
+    color: var(--white);
+}
+
+.button:focus {
+    background-color: var(--lightgrey);
+    color: var(--white);
+}
