@@ -38,3 +38,9 @@
     cursor: pointer;
     color: var(--orange);
 }
+
+.rating .submit-button:focus {
+    /* If user clicks on submit before choosing a rating, button should not 
+    change background */
+    background-color: var(--orange);
+}

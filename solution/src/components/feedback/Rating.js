@@ -3,7 +3,7 @@ import classes from './Rating.module.css';
 import iconstar from "../../images/icon-star.svg";
 import Button from '../utilities/Button';
 
-const Rating = () => {
+const Rating = (props) => {
     return (
         <Card className={`${classes.rating}`}>
             <img src={iconstar} arg="" className={classes["icon-star"]} />
@@ -15,13 +15,20 @@ const Rating = () => {
             <div className={classes["rating-button-group"]}>
                 {
                     [1, 2, 3, 4, 5].map(rating =>
-                        <Button className={classes["rating-button"]}>
+                        <Button
+                            key={rating}
+                            className={classes["rating-button"]}
+                            onClick={(rating) => props.ratingHandler(rating)}>
                             {rating}
                         </Button>
                     )
                 }
             </div>
-            <Button className={classes["submit-button"]}>Submit</Button>
+            <Button
+                className={classes["submit-button"]}
+                onClick={(_) => props.submitHandler()}>
+                Submit
+            </Button>
         </Card>
     );
 }
