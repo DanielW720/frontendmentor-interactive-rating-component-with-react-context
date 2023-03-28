@@ -42,5 +42,6 @@
 .rating .submit-button:focus {
     /* If user clicks on submit before choosing a rating, button should not 
     change background */
+    color: var(--white);
     background-color: var(--orange);
 }
