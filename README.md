@@ -6,6 +6,8 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 
 The challenge is to build out this interactive rating component and get it looking as close to the design as possible.
 
+I also wanted to learn about using the `useReducer` and `useContext` hooks for handling state without passing props down the tree. Therefore refactored my previous `useState`-solution in this challange.
+
 ![Mobile design for the NFT preview card component coding challenge](./design/mobile-design.jpg)
 
 Users should be able to:
@@ -21,12 +23,12 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](./solution/)
-- Live Site URL: [Live site](https://stupendous-axolotl-27e19f.netlify.app/)
+- Live Site URL: [Live site](https://stupendous-axolotl-27e19f.netlify.app/) change me
 
 ### Built with
 
 - React
-- React Context and Reducers for handling state
+- React hooks `useContext` and `useReducer` and for handling state
 - Reusable components (Card, Button)
 - Stateful components
 - Semantic HTML5 markup
@@ -35,6 +37,6 @@ Users should be able to:
 
 ## Author
 
+- LinkedIn - [Daniel Westerlund](https://www.linkedin.com/in/daniel-westerlund-a07529179/)
 - Website - [GitHub Pages](https://danielw720.github.io/)
 - Frontend Mentor - [@DanielW720](https://www.frontendmentor.io/profile/yourusername)
-- LinkedIn - [Daniel Westerlund](https://www.linkedin.com/in/daniel-westerlund-a07529179/)
