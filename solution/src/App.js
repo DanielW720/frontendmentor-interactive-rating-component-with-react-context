@@ -2,6 +2,8 @@ import './App.css';
 import { useState, useReducer } from 'react';
 import Rating from './components/feedback/Rating';
 import ThankYou from './components/feedback/ThankYou';
+import { RatingContext } from './RatingContext';
+import SomeOtherComponent from './SomeOtherComponent';
 
 function ratingReducer(ratingState, action) {
   switch (action.type) {
@@ -18,13 +20,8 @@ function ratingReducer(ratingState, action) {
 }
 
 function App() {
-  // const [rating, setRating] = useState('');
   const [rating, dispatch] = useReducer(ratingReducer, 0);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // const ratingHandler = (chosenRating) => {
-  //   setRating(chosenRating);
-  // }
 
   const submitHandler = () => {
     if (Number.isInteger(rating)) {
@@ -34,28 +31,12 @@ function App() {
     }
   }
 
-  // const reset = () => {
-  //   setRating('');
-  //   setIsSubmitted(false);
-  // }
-
   const ratingHandler = (chosenRating) => {
     dispatch({
       type: 'chose-rating',
       rating: chosenRating
     });
   }
-
-  // const submitHandler = () => {
-  //   if (Number.isInteger(rating)) {
-  //     dispatch({
-  //       type: 'submitted',
-  //     });
-  //   } else {
-  //     // TODO: Present this to user
-  //     console.log("Please choose a rating before submitting!")
-  //   }
-  // }
 
   const reset = () => {
     dispatch({
@@ -69,7 +50,12 @@ function App() {
       <main>
         {
           isSubmitted ?
-            <ThankYou rating={rating} onReset={reset} /> :
+            <RatingContext.Provider value={[{ rating: rating }]}>
+              {/* Provider: If any component inside this <ThankYou> asks for RatingContext, give 
+              them this rating. */}
+              <ThankYou onReset={reset} />
+              <SomeOtherComponent />
+            </RatingContext.Provider> :
             <Rating ratingHandler={ratingHandler} submitHandler={submitHandler} />
         }
       </main>

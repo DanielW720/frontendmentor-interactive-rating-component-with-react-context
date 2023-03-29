@@ -1,14 +1,19 @@
 import Card from '../UI/Card';
 import classes from './ThankYou.module.css';
 import illustrationThankYou from "../../images/illustration-thank-you.svg";
-import Button from '../utilities/Button';
+import { useContext } from 'react';
+import { RatingContext } from '../../RatingContext';
 
-const ThankYou = props => {
+
+const ThankYou = ({ onReset }) => {
+    const rating = useContext(RatingContext);
+    const ratingValue = rating[0].rating;
+
     return (
-        <div onClick={props.onReset}>
+        <div onClick={onReset}>
             <Card className={`${classes.thankyou}`} >
                 <img src={illustrationThankYou} alt="Thank you" />
-                <div className={classes.youselected}>You selected {props.rating} out of 5</div>
+                <div className={classes.youselected}>You selected {ratingValue} out of 5</div>
                 <h1>Thank you!</h1>
                 <p>
                     We appreciate you taking the time to give a rating.
