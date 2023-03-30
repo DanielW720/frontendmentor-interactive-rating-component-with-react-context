@@ -38,7 +38,7 @@ export function ratingReducer(ratingState, action) {
             return [{ rating: null, submitted: false }];
         }
         case 'increase': {
-            return [{ rating: ratingState + 1, submitted: false }];
+            return [{ rating: ratingState[0].rating + 1, submitted: true }];
         }
         case 'submitted': {
             return [{ rating: ratingState[0].rating, submitted: true }]
