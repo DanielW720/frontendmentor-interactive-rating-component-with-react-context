@@ -1,19 +1,18 @@
 import Card from '../UI/Card';
 import classes from './ThankYou.module.css';
 import illustrationThankYou from "../../images/illustration-thank-you.svg";
-import { useContext } from 'react';
-import { RatingContext } from '../../RatingContext';
+import { useRating, useRatingDispatch } from '../../RatingContext';
 
-
-const ThankYou = ({ onReset }) => {
-    const rating = useContext(RatingContext);
-    const ratingValue = rating[0].rating;
+const ThankYou = () => {
+    const rating = useRating();
+    const dispatch = useRatingDispatch();
 
     return (
-        <div onClick={onReset}>
+        // Click anywhere on this card to reset state
+        <div onClick={() => dispatch({ type: 'reset' })}>
             <Card className={`${classes.thankyou}`} >
                 <img src={illustrationThankYou} alt="Thank you" />
-                <div className={classes.youselected}>You selected {ratingValue} out of 5</div>
+                <div className={classes.youselected}>You selected {rating[0].rating} out of 5</div>
                 <h1>Thank you!</h1>
                 <p>
                     We appreciate you taking the time to give a rating.

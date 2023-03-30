@@ -2,8 +2,11 @@ import Card from '../UI/Card';
 import classes from './Rating.module.css';
 import iconstar from "../../images/icon-star.svg";
 import Button from '../utilities/Button';
+import { useRatingDispatch } from '../../RatingContext';
 
-const Rating = (props) => {
+const Rating = () => {
+    const dispatch = useRatingDispatch();
+
     return (
         <Card className={`${classes.rating}`}>
             <img src={iconstar} alt="A star" className={classes["icon-star"]} />
@@ -18,7 +21,10 @@ const Rating = (props) => {
                         <Button
                             key={rating}
                             className={classes["rating-button"]}
-                            onClick={(rating) => props.ratingHandler(rating)}>
+                            onClick={(rating) => dispatch({
+                                type: 'chose-rating',
+                                rating: rating
+                            })}>
                             {rating}
                         </Button>
                     )
@@ -26,7 +32,7 @@ const Rating = (props) => {
             </div>
             <Button
                 className={classes["submit-button"]}
-                onClick={(_) => props.submitHandler()}>
+                onClick={(_) => dispatch({ type: 'submitted' })}>
                 Submit
             </Button>
         </Card>
