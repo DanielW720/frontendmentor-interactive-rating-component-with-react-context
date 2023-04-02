@@ -17,6 +17,8 @@ function App() {
   );
 }
 
+// Feedback component exists in order to wrap both the Rating and the ThankYou component in RatingProvider. Alternatively, App component could have been wrapped
+// in RatingProvider in index.js.
 const Feedback = () => {
   const rating = useRating();
 
